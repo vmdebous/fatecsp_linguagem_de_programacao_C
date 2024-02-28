@@ -2,101 +2,209 @@
 
 site da disciplina ILP-010 : https://sites.google.com/view/slagop/in%C3%ADcio/linguagem-de-programa%C3%A7%C3%A3o-n
 
-## Linguagem C:
 
+# Linguagem C: 
 
-### Tipos:
-float 4 bytes , limites numéricos: +-pow(10,38) 
+(Compilador Pelles)
 
-double 8 bytes , limites numéricos : +-pow(10,308)
+<h2>Introdução:</h2>
 
-int 4 bytes , limites numéricos: +- pow(10,9)
-
-char 1 byte. limite; -127 a +128
-
-void 0
-
-#### Tipos modificados:
-unsigned char 1 byte  limites numéricos: 0 ... 255
-
-unsigned int 4 bytes limites numéricos: 0 ... 4294967295
-
-short int 2 bytes   limites numéricos: +-32767
-
-long long int 8 bytes   limites numéricos:  -+9223372036854775807
-
-unsigned short int 2 bytes limites numéricos: 0 ... 65535
-
-unsigned long long int 8 bytes limites numéricos: 0 ... 18446744073709551615
-
-### Formatação:
-
-#### Especificador de formato:
-*Determina o tipo de dado que será lido do teclado ou exibido no vídeo.*
-
-%c caractere
-
-%o, %d, %x, %X número inteiro em octal, decimal ou hexadecimal
-
-%u número inteiro em base decimal sem sinal (unsigned)
-
-%hd número inteiro curto em base decimal (short int)
-
-%lld número inteiro longo longo em base decimal (long long int)
-
-%f número real de precisão simples ou dupla (float)
-
-%s cadeia de caracteres (string)
-
-%% único sinal de porcentagem
-
-#### Caracteres de controle:
-*Representa um caractere especial da tabela ASCII.*
-
-\a soa o alarme do computador
-
-\b o cursor retrocede à coluna anterior
-
-\f alimenta página na impressora
-
-\n o cursor avança para uma nova linha
-
-\r o cursor retrocede para a primeira coluna da linha
-
-\t o cursor avança para próxima marca de tabulação
-
-\" exibe uma única aspa
-
-\' exibe um único apóstrofo
-
-\\ exibe uma única barra invertida
-
-\0 indica o final de uma cadeia de caracteres
-
-
-
-
-
-### Introdução:
     #include <stdio.h> // entrada e saída padrão
     #include <math.h>  // funções matemáticas
-    #include <locale.h>
+    #include <locale.h> // define caracteres
+    #include <stdbool.h> // booleanas
+    #include <conio.h> // color
     int main(void) {
-	    setlocale(LC_CTYPE,"BR");
-	    /* printf("Decimal? ");
-	    scanf("%d",&v);
-      printf("Decimal = %6d\nOctal = %8o\nHexadecimal = %2X\n",v,v,v);
-	    */
-	    for(int c = 0;c<=15;c++)
-		    printf("Caracter =  \%c ASCII = %3d\n",c,c);
 
-	    //printf("\nBytes de 7/2 %5d\nBytes de 7/2.0 %3d\n",sizeof(7/2),sizeof(7/2.0));
-	  return 0;
-}
+       return 0
+     }
+     
+<h2>Variaveis</h2>
+
+<h3>Tipos:</h3>
+
+<table>
+	<thead>
+		<tr>
+			<th>Tipo</th>
+			<th>Tamanho na memória</th>
+			<th>Limite numérico</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>float</td>
+			<td>4 bytes</td>
+			<td>+-pow(10,38)</td>
+		</tr>
+		<tr>
+			<td>double</td>
+			<td>8 bytes</td>
+			<td>+-pow(10,308)</td>
+		</tr>
+		<tr>
+			<td>int</td>
+			<td>4 bytes</td>
+			<td>+-pow(10,9)</td>
+		</tr>
+		<tr>
+			<td>char</td>
+			<td>1 byte</td>
+			<td>-127 a +128</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3>Tipos modificados:</h3>
+
+<table>
+	<thead>
+		<tr>
+			<th>Tipo</th>
+			<th>Tamanho na memória</th>
+			<th>Limite numérico</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>unsigned char</td>
+			<td>1 bytes</td>
+			<td>0 a 255</td>
+		</tr>
+		<tr>
+			<td>unsigned int</td>
+			<td>4 bytes</td>
+			<td>0 a 4294967295</td>
+		</tr>
+		<tr>
+			<td>short</td>
+			<td>2 bytes</td>
+			<td>-32767 a +32767</td>
+		</tr>
+		<tr>
+			<td>long long</td>
+			<td>8 byte</td>
+			<td>-9223372036854775807 a +9223372036854775807</td>
+		</tr>
+		<tr>
+			<td>unsigned short int</td>
+			<td>2 byte</td>
+			<td>0 a 65535</td>
+		</tr>
+		<tr>
+			<td>unsigned long long int</td>
+			<td>8 byte</td>
+			<td>0 a 18446744073709551615</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h2>Formatação:</h2>
+
+<h3>Especificador de formato:</h3>
+
+*Determina o tipo de dado que será lido do teclado ou exibido no vídeo.*
+
+<table>
+	<thead>
+		<tr>
+			<th>Especificador</th>
+			<th>Descrição</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>%c</td>
+			<td>caractere</td>
+		</tr>
+		<tr>
+			<td>%o</td>
+			<td>octal</td>
+		</tr>
+		<tr>
+			<td>%d</td>
+			<td>decimal</td>
+		</tr>
+		<tr>
+			<td>%x,%X</td>
+			<td>hexadecimal</td>
+		</tr>
+		<tr>
+			<td>%u</td>
+			<td>número inteiro em base decimal sem sinal</td>
+		</tr>
+		<tr>
+			<td>%hd</td>
+			<td>número inteiro curto em base decimal (short int)</td>
+		</tr>
+		<tr>
+			<td>%lld</td>
+			<td>número inteiro longo longo em base decimal (long long int)</td>
+		</tr>
+		<tr>
+			<td>%f</td>
+			<td>número real de precisão simples ou dupla (float)</td>
+		</tr>
+		<tr>
+			<td>%s</td>
+			<td>cadeia de caracteres (string)</td>
+		</tr>
+		<tr>
+			<td>%%</td>
+			<td>único sinal de porcentagem</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Caracteres de controle:</h2>
+
+*Representa um caractere especial da tabela ASCII.*
+
+<table>
+	<thead>
+		<tr>
+			<th>Caracter de controle</th>
+			<th>Descrição</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>\a </td>
+			<td>soa o alarme do computador</td>
+		</tr>
+		<tr>
+			<td>\b</td>
+			<td>o cursor retrocede à coluna anterior</td>
+		</tr>
+		<tr>
+			<td>\f</td>
+			<td>alimenta página na impressora</td>
+		</tr>
+		<tr>
+			<td>\n</td>
+			<td>o cursor avança para uma nova linha</td>
+		</tr>
+		<tr>
+			<td>\r</td>
+			<td>o cursor retrocede para a primeira coluna da linha</td>
+		</tr>
+		<tr>
+			<td>\t</td>
+			<td>o cursor avança para próxima marca de tabulação</td>
+		</tr>
+		<tr>
+			<td>\0</td>
+			<td>indica o final de uma cadeia de caracteres</td>
+		</tr>
+	</tbody>
+</table>
 
 
 
-### Observações:
+
+<h5>Observações:</h5>
+
 sendo n posição do número, leitura da direita para esquerda, para conversão para decimal:
 
 binário: somatorio(digiton*pow(2,n))
@@ -106,4 +214,119 @@ octal: somatorio(digitoN*pow(8,n))
 hexadecimal: somatorio(digitoN*pow(16,n))
 
 iniciados com 0 : número octal
+
+
+
+<h2>Operadores</h2>
+
+<h3>Operadores relacionais</h3>
+
+<table>
+	<thead>
+		<tr>
+			<th>Operador</th>
+			<th>Significado</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>==</td>
+			<td>Igual</td>
+		</tr>
+		<tr>
+			<td>!=</td>
+			<td>Diferente</td>
+		</tr>
+		<tr>
+			<td>\<</td>
+			<td>Menor</td>
+		</tr>
+		<tr>
+			<td>\></td>
+			<td>Maior</td>
+		</tr>
+		<tr>
+			<td>\<=</td>
+			<td>Menor ou igual</td>
+		</tr>
+		<tr>
+			<td>\>=</td>
+			<td>Maior ou igual</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h3>Operadores lógicos</h3>
+
+<table>
+	<thead>
+		<tr>
+			<th>Operador</th>
+			<th>Significado</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>!</td>
+			<td>Negação (não)</td>
+		</tr>
+		<tr>
+			<td>&&</td>
+			<td>Conjunção</td>
+		</tr>
+		<tr>
+			<td>||</td>
+			<td>Disjunção</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h5>Observações:</h5>
+
+! tem prioridade sobre &&, que tem prioridade sobre ||.
+
+Os resultados dos operadores lógicos são definidos por suas respectivas tabelas-verdade.
+
+<h3>Operador ternário</h3>
+
+	(condicao ? expressao1 : expressao2)
+
+<h2>Comandos de seleção</h2>
+
+<h3>Comando if-else</h3>
+
+	if ( condicao-1) comando1;
+ 	else if(condicao-2) comando2;
+ 	else condicao-3 comando-3;
+
+<h3>Comando switch-case</h3>
+
+	switch ( expressao){
+ 		case constante: sequencia_de_comandos;break;
+   		default: sequencia_de_comandos;break;
+	}
+ 
+<h3>Bloco</h3>
+
+	int main(void) {
+	    for(int c = 0;c<=15;c++){
+			_textcolor(14);
+			_textbackground(1);
+			if (c!=7) {printf("%20s\n"," ");}
+			else{
+				printf("%7s"," ");
+				_textcolor(1);
+				_textbackground(14);
+				printf("%5s","TESTE");
+				_textcolor(14);
+				_textbackground(1);
+				printf("%8s\n"," ");
+			};
+		}
+		getchar();
+	  return 0;
+	}
+
 
