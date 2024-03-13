@@ -14,6 +14,8 @@ site da disciplina ILP-010 : https://sites.google.com/view/slagop/in%C3%ADcio/li
     #include <locale.h> // define caracteres
     #include <stdbool.h> // booleanas
     #include <conio.h> // color
+    #include <stdlib.h> // números aleatórios
+    #include <time.h>
     int main(void) {
 
        return 0
@@ -293,6 +295,36 @@ Os resultados dos operadores lógicos são definidos por suas respectivas tabela
 
 	(condicao ? expressao1 : expressao2)
 
+ <h3>Operador de atribuição aritmético</h3>
+
+- <strong>Prefixado</strong> o valor de x é calculado <strong>antes</strong> da expressão
+
+- <strong>Posfixado</strong> o valor de x é calculado <strong>após</strong> a expressão
+
+  
+
+<table>
+	<thead>
+		<tr>
+			<th>Forma estendida</th>
+			<th>Forma posfixa</th>
+			<th>Forma prefixa</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>x = x + 1</td>
+			<td>x++</td>
+   			<td>++x</td>
+		</tr>
+		<tr>
+			<td>x = x - 1</td>
+			<td>x--</td>
+   			<td>--x</td>
+		</tr>
+	</tbody>
+</table>
+
 <h2>Comandos de seleção</h2>
 
 <h3>Comando if-else</h3>
@@ -329,4 +361,38 @@ Os resultados dos operadores lógicos são definidos por suas respectivas tabela
 	  return 0;
 	}
 
+<h2>Comandos de repetição</h2>
+
+<h3>Comando for</h3>
+
+	int main(void) {
+		int n;
+		printf("Tamanho? ");
+		scanf("%d",&n);
+		for (int i=1;i<=n;++i){
+			for(int j = 1;j<=n;++j){
+				_textcolor((i+j)%2 ? 15 : 8);
+				printf("%c%c",219,219);
+			}
+			putchar('\n');
+		}
+   		return 0;
+	}
+
+ <h3>Comando while</h3>
+
+	int main(void) {
+		srand(time(NULL));
+		int c, n = rand()%7 + 1;
+		do {
+			printf("Chute entre 1 e 7: ");
+			scanf("%d",&c);
+			if(c>n) puts("Muito alto!");
+			else if(c<n) puts("Muito baixo!");
+			else puts("Voce acertou!");
+		} while(n!=c);
+  		return 0;
+	}
+
+ <h3>Comando break</h3>
 
