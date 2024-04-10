@@ -337,6 +337,7 @@ Os resultados dos operadores lógicos são definidos por suas respectivas tabela
 
 	switch ( expressao){
  		case constante: sequencia_de_comandos;break;
+   _textcolor(1);
    		default: sequencia_de_comandos;break;
 	}
  
@@ -396,3 +397,23 @@ Os resultados dos operadores lógicos são definidos por suas respectivas tabela
 
  <h3>Comando break</h3>
 
+<h2>Vetores e Matrizes</h2>
+
+<h3>Vetor</h3>
+
+- é um tipo de dados capaz de armazenar uma coleção de dados do mesmo tipo
+
+		int v[3];
+		int nome[n] = {valor1,valor2,valor3,...,valorn};
+  		int w[];
+
+- Logo após a criação do vetor, cada uma de suas posições tem um valor arbitrário
+
+- O nome de um vetor em C representa o seu endereço na memória, que coincide com o endereço de seu primeiro item.
+
+- Em C, no caso de vetores, a passagem é feita por referência (a função recebe o endereço do vetor e, usando esse endereço, pode manupular diretamente o vetor original).
+
+<h2>Matriz</h2>
+
+- é um vetor cujos itens também são vetores.
+- 
