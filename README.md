@@ -417,3 +417,26 @@ Os resultados dos operadores lógicos são definidos por suas respectivas tabela
 
 - é um vetor cujos itens também são vetores.
 - 
+
+
+<h2>Ordenação</h2>
+
+
+
+
+
+<h2> Busca </h2>
+
+<h3>Busca linear</h3>
+
+- não supõe que o vetor onde é feita a busca está ordenado.
+
+- número de operações é, no máximo, a ordem de complexidade O(n).
+
+<h3>Busca binária</h3>
+
+- supõe que o vetor onde é feita a busca está ordenado.
+
+- número de operações = ordem de complexidade é O(logn).
+
+
