@@ -16,6 +16,8 @@ site da disciplina ILP-010 : https://sites.google.com/view/slagop/in%C3%ADcio/li
     #include <conio.h> // color
     #include <stdlib.h> // números aleatórios
     #include <time.h>
+    #include <ctype.h>
+    #include <string.io>
     int main(void) {
 
        return 0
@@ -438,5 +440,18 @@ Os resultados dos operadores lógicos são definidos por suas respectivas tabela
 - supõe que o vetor onde é feita a busca está ordenado.
 
 - número de operações = ordem de complexidade é O(logn).
+
+
+
+<h2>Strings</h2>
+
+<h3>Atribuição de strings</h3>
+
+- Como o nome de um vetor representa o seu endereço na memória (que é constante), não é possível copiar uma string para outra usando o operador de atribuição.
+
+<h3>Comparação de strings</h3>
+
+- Como o nome de um vetor representa o seu endereço na memória (que é constante), não é possível copiar uma string para outra usando o operador de atribuição.
+
 
 
