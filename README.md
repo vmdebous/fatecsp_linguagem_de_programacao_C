@@ -454,4 +454,30 @@ Os resultados dos operadores lógicos são definidos por suas respectivas tabela
 - Como o nome de um vetor representa o seu endereço na memória (que é constante), não é possível copiar uma string para outra usando o operador de atribuição.
 
 
+<h2>Estrutura</h2>
+
+		typedef struct {
+			int codigo;
+			char nome[23];
+			float salario;
+		} Funcionario;
+  
+- é um tipo de dados capaz de armazenar uma coleção de dados de tipos distintos.
+  
+- Os itens de uma variável do tipo estrutura são identificados por nomes de campos e são armazenados em posições consecutivas de memória. Os itens da estrutura Funcionario são os seguintes? Funcionarios.codigo, Funcionario.nome e Funcionario.salario, de acordo com o exemplo acima.
+
+- O nome de uma variável do tipo estrutura **não** representa seu endereço de memória;
+
+<h2>Tabela</h2>
+
+- é um vetor cujos itens são estruturas.
+
+		Func v[] = {{561,"Eva Maranhao",9200.00,{2,7,2012}},
+		{295,"Ana Teixeira",6100.00,{5,9,2015}},
+            	{473,"Denise Lagoa",8500.00,{1,6,2013}},
+            	{102,"Catia Telles",7300.00,{3,8,2014}},
+            	{384,"Beatriz Lira",5400.00,{4,9,2016}}};
+
+
+obs: alignment
 
