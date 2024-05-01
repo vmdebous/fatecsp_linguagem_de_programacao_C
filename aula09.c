@@ -21,7 +21,7 @@ typedef struct {
 
 int main(void) {
    Func f;
-   printf("Codigo..: "); scanf("%d%*c",&f.codigo);
+   printf("Codigo..: "); scanf("%d%*c",&f.codigo); // o *c lê e descarta o caractere Enter o buffer do teclado
    printf("Nome....: "); gets(f.nome);
    printf("Salario.: "); scanf("%f",&f.salario);
    printf("Admissao: "); scanf("%d/%d/%d",&f.admissao.dia,
@@ -156,22 +156,91 @@ int main(void) {
 // Exemplo 12
 //------------------------------------------------------------
 
-Func v[] = {{561,"Eva Maranhao",9200.00,{2,7,2012}},
-            {295,"Ana Teixeira",6100.00,{5,9,2015}},
-            {473,"Denise Lagoa",8500.00,{1,6,2013}},
-            {102,"Catia Telles",7300.00,{3,8,2014}},
-            {384,"Beatriz Lira",5400.00,{4,9,2016}}};
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+   int dia;
+   int mes;
+   int ano;
+} Data;
+
+typedef struct {
+   int codigo;
+   char nome[21];
+   float salario;
+   Data admissao;
+} Func;
+
+void exibe(Func f) {
+    printf("| %4d | %-32s | %10.2f | %02d/%02d/%04d |\n",
+          f.codigo,f.nome,f.salario,
+          f.admissao.dia,f.admissao.mes,f.admissao.ano);
+}
+void exibetab(Func v[],int tamanho){
+for (int i = 0; i< tamanho;i++)exibe(v[i]);
+}
+int main(){
+		Func v[] = {{561,"Eva Maranhao",9200.00,{2,7,2012}},
+		{295,"Ana Teixeira",6100.00,{5,9,2015}},
+            	{473,"Denise Lagoa",8500.00,{1,6,2013}},
+            	{102,"Catia Telles",7300.00,{3,8,2014}},
+            	{384,"Beatriz Lira",5400.00,{4,9,2016}}};
+	exibetab(v,5);
+return 0;}
 
 //------------------------------------------------------------
 // Exercicio 2
 //------------------------------------------------------------
 
-void bsort(int v[],int n) {
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+   int dia;
+   int mes;
+   int ano;
+} Data;
+
+typedef struct {
+   int codigo;
+   char nome[21];
+   float salario;
+   Data admissao;
+} Func;
+
+void exibe(Func f) {
+    printf("| %4d | %-32s | %10.2f | %02d/%02d/%04d |\n",
+          f.codigo,f.nome,f.salario,
+          f.admissao.dia,f.admissao.mes,f.admissao.ano);
+}
+
+void ordenatab(Func v[],int n) {
    for(int i=1; i<=n-1; i++)
       for(int j=0; j<n-i; j++)
-         if( v[j]>v[j+1] )
-            troca(v,j,j+1);
+         if( _stricmp(v[j].nome>v[j+1].nome)<0){
+			Func aux = v[j];
+			v[j] = v[j+1];
+			v[j+1] = aux;
+			}
+            
 }
+
+void exibetab(Func v[],int tamanho){
+for (int i = 0; i< tamanho;i++)exibe(v[i]);
+}
+
+int main(){
+		Func v[] = {{561,"Eva Maranhao",9200.00,{2,7,2012}},
+		{295,"Ana Teixeira",6100.00,{5,9,2015}},
+            	{473,"Denise Lagoa",8500.00,{1,6,2013}},
+            	{102,"Catia Telles",7300.00,{3,8,2014}},
+            	{384,"Beatriz Lira",5400.00,{4,9,2016}}};
+	exibetab(v,5);
+	ordenatab(v,5);
+	getchar();
+	exibetab(v,5);
+return 0;}
 
 //------------------------------------------------------------
 // Exercicio 7
