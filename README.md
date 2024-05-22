@@ -481,3 +481,7 @@ Os resultados dos operadores lógicos são definidos por suas respectivas tabela
 
 obs: alignment
 
+
+
+operador unário
+operador binario (só estrutura tem campo)
